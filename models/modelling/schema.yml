@@ -1,0 +1,145 @@
+version: 2
+
+models:
+  - name: fact_bank
+    description: fact bank campaign
+    columns:
+      - name: age
+        description: age
+        tests:
+          - not_null
+      - name: job_id
+        description: job id
+        tests:
+          - not_null
+      - name: marital_id
+        description: marital id
+        tests:
+          - not_null
+      - name: education_id
+        description: education id
+        tests:
+          - not_null
+      - name: credit_id
+        description: credit id
+        tests:
+          - not_null
+      - name: housing_loan_id
+        description: housing loan id
+        tests:
+          - not_null
+      - name: personal_loan_id
+        description: personal loan id
+        tests:
+          - not_null
+      - name: contact_id
+        description: contact id
+        tests:
+          - not_null
+      - name: month
+        description: last contact month
+        tests:
+          - not_null
+      - name: day
+        description: last contact day of the week
+        tests:
+          - not_null
+      - name: duration
+        description: last contact duration
+        tests:
+          - not_null
+      - name: campaign
+        description: number of contacts performed
+        tests:
+          - not_null
+      - name: pdays
+        description: number of days that passed
+        tests:
+          - not_null
+      - name: previous
+        description: number of contacts performed
+        tests:
+          - not_null
+      - name: poutcome
+        description: outcome of the previous campaign
+        tests:
+          - not_null
+      - name: emp_var_rate
+        description: employment variation rate
+        tests:
+          - not_null
+      - name: cons_price_idx
+        description: consumer price index
+        tests:
+          - not_null
+      - name: cons_conf_idx
+        description: consumer confidence index
+        tests:
+          - not_null
+      - name: euribor3m
+        description: euribor 3 month rate
+        tests:
+          - not_null
+      - name: nr_employed
+        description: number of employees
+        tests:
+          - not_null
+      - name: subscribed
+        description: subscribed yes or no
+        tests:
+          - not_null
+
+  - name: dim_job
+    description: dimensional table for job
+    columns:
+    - name: id
+      tests:
+        - unique
+    columns:
+    - name: job
+      tests:
+        - not_null
+
+  - name: dim_marital
+    description: dimensional table for marital
+    columns:
+    - name: id
+      tests:
+        - unique
+    columns:
+    - name: marital
+      tests:
+        - not_null
+            
+  - name: dim_education
+    description: dimensional table for education
+    columns:
+    - name: id
+      tests:
+        - unique
+    columns:
+    - name: education
+      tests:
+        - not_null
+
+  - name: dim_credit_loan
+    description: dimensional table for credit and loan
+    columns:
+    - name: id
+      tests:
+        - unique
+    columns:
+    - name: credit_loan
+      tests:
+        - not_null
+
+  - name: dim_contact
+    description: dimensional table for contact
+    columns:
+    - name: id
+      tests:
+        - unique
+    columns:
+    - name: contact
+      tests:
+        - not_null
